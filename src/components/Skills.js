@@ -1,6 +1,5 @@
 import React from "react";
-import { Col, Container, Row, Table } from "react-bootstrap";
-import reactLogo from "../assets/img/react.png"
+import { Col, Container, Row } from "react-bootstrap";
 import ProgressBar from "./ProgressBar";
 export const Skills = () => {
     const skillInfo = [
