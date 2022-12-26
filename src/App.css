@@ -1,38 +1,271 @@
-.App {
-  text-align: center;
+/* Custom Font */
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Bold.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Medium.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Book.ttf');
+	font-weight: 400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Main Css */
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: 'Centra', sans-serif !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* NavBar Css */
+nav.navbar {
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  transition: 0.2s ease-in-out;
+  background-color: #12121255;
+}
+nav.navbar.scrolled {
+  padding: 5px ;
+  background-color: #121212;
+}
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-weight: 400;
+  color: #fff !important;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+}
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+    opacity: 1;
+}
+span.navbar-text {
+    display: flex;
+    align-items: center;
+}
+.navbar-text button {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+	position: relative;
+	background-color: transparent;
+	transition: 0.3s ease-in-out;
+}
+.navbar-text button span {
+  z-index: 1;
+}
+.navbar-text button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.navbar-text button:hover {
+  color: #121212;
+}
+.navbar-text button:hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+	outline: none;
+    box-shadow: none;
+}
+nav.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  position: relative;
+  transition: all 300ms linear;
+}
+nav.navbar .navbar-toggler-icon:focus {
+	border-bottom: 2px solid #fff;
+}
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-toggler-icon:before {
+	width: 24px;
+	position: absolute;
+	height: 2px;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	content: '';
+	z-index: 2;
+	transition: all 300ms linear;
+}
+nav.navbar .navbar-toggler-icon:after {
+	top: 8px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+	transform: rotate(45deg);
+	background-color: #fff;
+	height: 2px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+	transform: translateY(8px) rotate(-45deg);
+	background-color: #fff;
+	height: 2px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+	border-color: transparent;
+}
+
+@media(max-width: 765px){
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Banner Css */
+.banner {
+  margin-top: 0;
+  height: 100vh;
+  background-image: url("./assets//img/space.jpeg");
+}
+
+.banner h1 {
+  font-size: 65px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner h3 {
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.banner-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.description {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Skills Css */
+/* #skills {
+  height: 50vh;
+}   */
+
+#skills h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+#skills .skill-logo {
+  height: 80px;
+}
+
+#skills .skill-name {
+  padding-right: 20px;
+  font-size: 18px;
+}
+
+/* Project Card Css */
+#projects {
+  display: flex;
+  /* height: 65vh; */
+  background: linear-gradient(90deg, rgba(0,24,73,0.1516981792717087) 0%, rgba(0,63,70,0.12368697478991597) 36%, rgba(55,55,55,0.14329481792717091) 100%);
+}
+
+#projects h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.project-card { 
+  border-radius: 0.75rem;
+  padding: 20px;
+  border: 1px solid #2D3748;
+  background: linear-gradient(90deg, rgba(26,32,44,0.742734593837535) 0%, rgba(26,32,44,0.39539565826330536) 55%, rgba(26,32,44,0.10688025210084029) 100%);
+  /* transition: 0.3s ease-in-out; */
+}
+
+.project-card:hover{ 
+  /* border: 5px solid #2D3748; */
+  outline: solid 5px #2D3748;
+  outline-offset: -5px;
+  cursor: pointer;
+}
+.project-info {
+  text-align: left;
+}
+
+.project-info .description {
+  color: #B8B8B8;
+  width: 80%;
+  margin: auto;
+  font-size: 15px;
+}
+
+/* Contact Css */
+#contact {
+  /* background: linear-gradient(90deg, rgba(0,24,73,0.1516981792717087) 0%, rgba(0,63,70,0.12368697478991597) 36%, rgba(55,55,55,0.14329481792717091) 100%); */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contact {
+  border-radius: 0.75rem;
+  padding: 10vw;
+  border: 1px solid #2D3748;
+  background: linear-gradient(90deg, rgba(26,32,44,0.742734593837535) 0%, rgba(26,32,44,0.39539565826330536) 55%, rgba(26,32,44,0.10688025210084029) 100%);
+}
+
+#contact h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+#contact .icon {
+  width: 4rem;
+  margin: 10px;
+  /* max-height: 50px; */
+}
+
+/* Footer Css */
+.footer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./assets/img/space.jpeg");
+  background-position: right
 }
