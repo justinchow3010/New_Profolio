@@ -10,7 +10,10 @@ export const Contact = () => {
             <Container className="text-center">
                 <h2>Get In Touch</h2>
                 {/* <img src={linkedin} alt="linkedin" className="icon"></img> */}
-                <div className="contact d-flex flex-row justify-content-center my-3">
+                <div className="contact d-flex flex-row justify-content-center my-3 flex-wrap">
+                    <div style={{flex: "0 0 100%"}} className="p-2">
+                        Looking for Software Engineer opportunities
+                    </div>
                     <a href="https://www.linkedin.com/in/justin-chow-41638b1bb/" target={"_blank"}>
                         <img src={Linkedin} alt="lnkedin" className="icon" />
                     </a>

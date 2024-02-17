@@ -16,6 +16,10 @@ export const Skills = () => {
             percentage: "80"
         },
         {
+            title: "Java",
+            percentage: "65"
+        },
+        {
             title: "SQL",
             percentage: "70"
         },
@@ -23,10 +27,7 @@ export const Skills = () => {
             title: "BootStrap",
             percentage: "60"
         },
-        {
-            title: "Java",
-            percentage: "50"
-        },
+        
     ]
 
     return (
